@@ -1,4 +1,4 @@
-package com.blockbasti.cragtrack.ui.notifications
+package com.blockbasti.cragtrack.ui.statistics
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,9 +10,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.blockbasti.cragtrack.R
 
-class NotificationsFragment : Fragment() {
+class StatisticsFragment : Fragment() {
 
-    private lateinit var notificationsViewModel: NotificationsViewModel
+    private lateinit var notificationsViewModel: StatisticsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,8 +20,8 @@ class NotificationsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         notificationsViewModel =
-            ViewModelProviders.of(this).get(NotificationsViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_notifications, container, false)
+            ViewModelProviders.of(this).get(StatisticsViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_statistics, container, false)
         val textView: TextView = root.findViewById(R.id.text_notifications)
         notificationsViewModel.text.observe(this, Observer {
             textView.text = it

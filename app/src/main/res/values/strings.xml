@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">CragTrack</string>
-    <string name="title_home">Home</string>
+    <string name="title_session">Session</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_statistics">Statistics</string>
+    <string name="title_activity_location_selector">Map</string>
+    <string name="option_get_place">Select Place</string>
+    <string name="pick_place">Pick a Place</string>
+    <string name="select_location">Select this location?</string>
 </resources>

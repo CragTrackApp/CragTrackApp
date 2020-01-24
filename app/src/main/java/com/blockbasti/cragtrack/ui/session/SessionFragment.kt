@@ -1,4 +1,4 @@
-package com.blockbasti.cragtrack.ui.home
+package com.blockbasti.cragtrack.ui.session
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.blockbasti.cragtrack.R
 
-class HomeFragment : Fragment() {
+class SessionFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var dashboardViewModel: SessionViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(this, Observer {
+        dashboardViewModel =
+            ViewModelProviders.of(this).get(SessionViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_session, container, false)
+        val textView: TextView = root.findViewById(R.id.text_dashboard)
+        dashboardViewModel.text.observe(this, Observer {
             textView.text = it
         })
         return root
