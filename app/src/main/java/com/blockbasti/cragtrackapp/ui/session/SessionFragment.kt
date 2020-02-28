@@ -1,4 +1,4 @@
-package com.blockbasti.cragtrack.ui.session
+package com.blockbasti.cragtrackapp.ui.session
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.blockbasti.cragtrack.R
+import com.blockbasti.cragtrackapp.R
 
 class SessionFragment : Fragment() {
 

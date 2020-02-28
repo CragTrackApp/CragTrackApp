@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.blockbasti.cragtrack">
+    package="com.blockbasti.cragtrackapp">
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -36,10 +36,10 @@
 
 
         <activity
-            android:name=".LocationSelectorActivity"
-            android:label="@string/title_activity_location_selector"></activity>
+            android:name="com.blockbasti.cragtrackapp.LocationSelectorActivity"
+            android:label="@string/title_activity_location_selector" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.blockbasti.cragtrackapp.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

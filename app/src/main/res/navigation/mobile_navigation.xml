@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.blockbasti.cragtrack.ui.dashboard.DashboardFragment"
+        android:name="com.blockbasti.cragtrackapp.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_session"
-        android:name="com.blockbasti.cragtrack.ui.session.SessionFragment"
+        android:name="com.blockbasti.cragtrackapp.ui.session.SessionFragment"
         android:label="@string/title_session"
         tools:layout="@layout/fragment_session" />
 
     <fragment
         android:id="@+id/navigation_statistics"
-        android:name="com.blockbasti.cragtrack.ui.statistics.StatisticsFragment"
+        android:name="com.blockbasti.cragtrackapp.ui.statistics.StatisticsFragment"
         android:label="@string/title_statistics"
         tools:layout="@layout/fragment_statistics" />
 </navigation>

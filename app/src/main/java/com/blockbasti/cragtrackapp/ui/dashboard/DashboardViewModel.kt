@@ -1,4 +1,4 @@
-package com.blockbasti.cragtrack.ui.dashboard
+package com.blockbasti.cragtrackapp.ui.dashboard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.blockbasti.cragtrack.ui.dashboard
+package com.blockbasti.cragtrackapp.ui.dashboard
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,8 +10,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.blockbasti.cragtrack.LocationSelectorActivity
-import com.blockbasti.cragtrack.R
+import com.blockbasti.cragtrackapp.LocationSelectorActivity
+import com.blockbasti.cragtrackapp.R
 
 class DashboardFragment : Fragment() {
 

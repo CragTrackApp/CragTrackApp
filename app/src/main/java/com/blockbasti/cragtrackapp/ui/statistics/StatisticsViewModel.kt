@@ -1,13 +1,13 @@
-package com.blockbasti.cragtrack.ui.session
+package com.blockbasti.cragtrackapp.ui.statistics
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SessionViewModel : ViewModel() {
+class StatisticsViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+        value = "This is notifications Fragment"
     }
     val text: LiveData<String> = _text
 }

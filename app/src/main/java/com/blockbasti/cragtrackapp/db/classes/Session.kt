@@ -1,6 +1,5 @@
-package com.blockbasti.cragtrack.db.classes
+package com.blockbasti.cragtrackapp.db.classes
 
-import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
