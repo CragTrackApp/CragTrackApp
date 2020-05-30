@@ -1,21 +1,25 @@
-package com.blockbasti.cragtrackapp
+package com.blockbasti.cragtrackapp.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.blockbasti.cragtrackapp.MainActivity
+import com.blockbasti.cragtrackapp.R
 import com.blockbasti.cragtrackapp.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
     private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,13 +49,14 @@ class LoginActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
         mAuth.useAppLanguage()
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this)
     }
 
     private fun signinAnonymous() {
         mAuth.signInAnonymously()
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
+                    analyticsSignUp("anonymous")
                     gotoMain()
                 } else {
                     // If sign in fails, display a message to the user.
@@ -72,6 +77,9 @@ class LoginActivity : AppCompatActivity() {
         mAuth.sendPasswordResetEmail(binding.loginEmail.text.toString())
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
+                    val bundle = Bundle()
+                    bundle.putString("email", binding.loginEmail.text.toString())
+                    firebaseAnalytics.logEvent("reset_password", bundle)
                     Toast.makeText(
                         baseContext, getText(R.string.login_sent_reset_mail),
                         Toast.LENGTH_SHORT
@@ -87,7 +95,7 @@ class LoginActivity : AppCompatActivity() {
             binding.loginPassword.text.toString()
         ).addOnCompleteListener(this) { task ->
             if (task.isSuccessful) {
-                // Sign in success, update UI with the signed-in user's information
+                analyticsSignUp("email")
                 gotoMain()
             } else {
                 // If sign in fails, display a message to the user.
@@ -122,6 +130,7 @@ class LoginActivity : AppCompatActivity() {
         ).addOnCompleteListener(this) { task ->
             if (task.isSuccessful) {
                 // Sign in success, update UI with the signed-in user's information
+                analyticsSignIn("email")
                 gotoMain()
             } else {
                 // If sign in fails, display a message to the user.
@@ -171,6 +180,11 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
+                    if (task.result?.additionalUserInfo?.isNewUser!!) {
+                        analyticsSignUp("google")
+                    } else {
+                        analyticsSignIn("google")
+                    }
                     gotoMain()
 
                 } else {
@@ -191,6 +205,18 @@ class LoginActivity : AppCompatActivity() {
             getString(R.string.error_login_empty_password)
         if (binding.loginEmail.text.isBlank() || binding.loginPassword.text.isBlank()) return false
         return true
+    }
+
+    fun analyticsSignUp(method: String) {
+        val bundle = Bundle()
+        bundle.putString(FirebaseAnalytics.Param.METHOD, method)
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SIGN_UP, bundle)
+    }
+
+    fun analyticsSignIn(method: String) {
+        val bundle = Bundle()
+        bundle.putString(FirebaseAnalytics.Param.METHOD, method)
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.LOGIN, bundle)
     }
 
 }

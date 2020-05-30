@@ -25,7 +25,7 @@
     <color name="color_secondary">#e65100</color>
     <color name="color_secondary_variant">#ac1900</color>
 
-    <color name="color_background">#111111</color>
+    <color name="color_background">#212121</color>
     <color name="color_surface">#333333</color>
     <color name="color_error">#cf6679</color>
 

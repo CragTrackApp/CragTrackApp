@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_activity_settings">Settings</string>
+
+    <string name="preference_category_general">General</string>
+    <string name="preference_category_account">Account</string>
+
+    <string name="preference_dark_mode_key">preference_dark_mode</string>
+    <string name="preference_dark_mode_title">Theme</string>
+    <string name="preference_dark_mode_system">System default</string>
+    <string name="preference_dark_mode_battery">Set by Battery Saver</string>
+    <string name="preference_dark_mode_dark">Dark</string>
+    <string name="preference_dark_mode_light">Light</string>
+
+    <string name="preference_signout_key">preference_signout</string>
+    <string name="preference_signout_title">Sign out</string>
+    <string name="preference_signout_summary">Sign out of the app</string>
+
+</resources>

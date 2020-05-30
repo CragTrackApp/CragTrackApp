@@ -22,10 +22,11 @@
     <string name="title_activity_login">Sign in</string>
     <string name="title_activity_location_selector">Select location</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_session">Session</string>
+    <string name="title_sessions">Sessions</string>
     <string name="title_statistics">Statistics</string>
     <string name="option_get_place">Get place</string>
     <string name="select_location">Select location</string>
+
     <string name="login_email">E-Mail</string>
     <string name="login_password">Password</string>
     <string name="login_signin">Sign in</string>
@@ -36,4 +37,11 @@
     <string name="error_login_empty_password">Please enter your password!</string>
     <string name="login_reset_password">Reset password</string>
     <string name="login_sent_reset_mail">Sent password reset email!</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="appbar_settings">Settings</string>
+    <string name="appbar_signout">Sign out</string>
+
+    <string name="session_newSession">New Session</string>
+    <string name="session_location">Location</string>
 </resources>

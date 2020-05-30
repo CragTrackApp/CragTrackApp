@@ -1,0 +1,19 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/preference_category_general">
+        <ListPreference
+            android:defaultValue="true"
+            android:entries="@array/preferences_list_entries_dark_mode"
+            android:entryValues="@array/preferences_list_values_dark_mode"
+            android:key="@string/preference_dark_mode_key"
+            android:title="@string/preference_dark_mode_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preference_category_account">
+        <Preference
+            android:key="@string/preference_signout_key"
+            android:summary="@string/preference_signout_summary"
+            android:title="@string/preference_signout_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
