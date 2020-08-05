@@ -58,7 +58,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-crashlytics:17.1.0'
     implementation 'com.google.firebase:firebase-core:17.4.3'
     implementation 'com.google.firebase:firebase-auth:19.3.1'
-    implementation 'com.google.android.gms:play-services-auth:18.0.0'
+    implementation 'com.google.android.gms:play-services-auth:18.1.0'
     implementation 'com.google.firebase:firebase-firestore-ktx:21.4.3'
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
