@@ -60,7 +60,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:20.0.3'
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
     implementation 'com.google.firebase:firebase-firestore-ktx:22.1.2'
-    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.annotation:annotation:1.2.0'
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     // Because RxAndroid releases are few and far between, it is recommended you also
     // explicitly depend on RxJava's latest version for bug fixes and new features.
